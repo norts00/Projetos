@@ -1,0 +1,290 @@
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY E FUNDO ===== */
+body.corpo-pagina {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #000000 10%, #001749 90%);
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== TÍTULO ===== */
+.titulo-principal {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== CARD ===== */
+.card.cartao-ponto {
+  background: linear-gradient(135deg, #03a9f4, #f441a5);
+  border-radius: 1rem;
+  padding: 4px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s ease;
+}
+
+.card.cartao-ponto:hover {
+  transform: scale(1.01);
+}
+
+.card.cartao-ponto::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  z-index: -1;
+  filter: blur(30px);
+  background: var(--background, #03a9f4);
+  opacity: 0.6;
+  border-radius: inherit;
+  transition: opacity 0.3s;
+}
+
+/* ===== INFO DO CARD ===== */
+.card-info.informacoes-cartao {
+  background: #1c1c1c;
+  border-radius: 0.9rem;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eee;
+}
+
+/* ===== FORMULÁRIO ===== */
+.formulario-registro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.input,
+.campo-data,
+.campo-hora {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 15px;
+  padding: 14px 18px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input:focus {
+  outline: 2px solid #03a9f4;
+  background: #fff;
+}
+
+/* ===== BOTÕES ===== */
+.button,
+.botao-entrada,
+.botao-saida {
+  background: linear-gradient(135deg, #25008b 0%, #3b4fff 100%);
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(34, 10, 255, 0.4);
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button:hover,
+.botao-entrada:hover,
+.botao-saida:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(20, 208, 255, 0.6);
+}
+
+.button:active,
+.botao-entrada:active,
+.botao-saida:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+/* ===== REGISTRO DE PONTO ===== */
+/* Estilos gerais para a tabela */
+.tabela-registros {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #111;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho da tabela */
+.tabela-registros th {
+  background-color: #25008b;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Células da tabela */
+.tabela-registros td {
+  padding: 12px 20px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Linhas alternadas */
+.tabela-registros tr:nth-child(even) {
+  background-color: #181818;
+}
+
+.tabela-registros tr:nth-child(odd) {
+  background-color: #141414;
+}
+
+/* Hover nas linhas */
+.linha-registro:hover {
+  background-color: #1b1b1b;
+}
+
+/* Estilo do botão de remover */
+.button-remover {
+  background-color: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.button-remover:hover {
+  transform: scale(1.2);
+  color: #ff7b7b;
+}
+
+/* Borda e efeito nas células */
+.celula {
+  font-size: 1rem;
+  color: #1170ff;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+/* ===== MESSES (Submenus) ===== */
+.mes {
+  background: linear-gradient(135deg, #25008b 0%, #3b4fff 100%);
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.mes:hover {
+  background-color: #3b4fff;
+}
+
+.submenu-mes {
+  display: none;
+  padding-left: 20px;
+  list-style-type: none;
+  background-color: #181818;
+  border-radius: 8px;
+}
+
+.submenu-mes li {
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submenu-mes li:hover {
+  background-color: #444;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.copyright {
+  color: #999;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 0 5px #000;
+}
+
+/* Estilo para o botão "Limpar todos os registros" */
+.botao-limpar {
+  background: linear-gradient(135deg, #ff4d4d 0%, #ff7b7b 100%); /* Gradiente vermelho */
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(255, 0, 0, 0.4); /* Sombra vermelha */
+  transition: all 0.3s ease-in-out;
+  width: 25%;
+  margin-top: 10px;
+}
+
+.botao-limpar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6); /* Aumenta a sombra no hover */
+}
+
+.botao-limpar:active {
+  opacity: 0.7;
+  transform: scale(0.98); /* Efeito de clique */
+}
+
+.botao-limpar:focus {
+  outline: 2px solid #ff4d4d; /* Efeito de foco */
+}
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 500px) {
+  .titulo-principal {
+    font-size: 1.8rem;
+  }
+
+  .button,
+  .botao-entrada,
+  .botao-saida {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}

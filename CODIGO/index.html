@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title class="titulo-pagina">PONTO DIARIO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="corpo-pagina">
+
+  <div class="card cartao-ponto">
+    <div class="card-info informacoes-cartao">
+      <div class="content conteudo-principal">
+        <p class="title titulo-principal">Registro seu Ponto</p>
+
+        <!-- Formulário para selecionar data e hora -->
+        <form class="form formulario-registro" onsubmit="event.preventDefault();">
+          <input type="date" id="data" class="input campo-data" required />
+          <input type="time" id="hora" class="input campo-hora" required />
+        </form>
+
+        <!-- Botões para registrar entrada e saída -->
+        <div class="container container-entrada">
+          <button type="button" class="button botao-entrada" onclick="baterPonto('entrada')">Registrar Entrada</button>
+        </div>
+
+        <div class="container container-saida">
+          <button type="button" class="button botao-saida" onclick="baterPonto('saida')">Registrar Saída</button>
+        </div>
+
+        <!-- Container para os registros -->
+        <div class="registro lista-registros" id="registro">
+          <!-- Aqui será gerado dinamicamente o conteúdo dos registros -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p class="copyright">© Marcos Estevo 2025</p>
+  </footer>
+
+  <!-- Script para funcionalidade dos registros -->
+  <script src="script.js"></script>
+
+</body>
+</html>
